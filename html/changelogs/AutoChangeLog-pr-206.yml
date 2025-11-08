@@ -1,0 +1,4 @@
+author: "Kitsunemitsu"
+delete-after: True
+changes:
+  - refactor: "refactors multiple mechanics to be better for our game's performance"
