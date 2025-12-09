@@ -858,6 +858,46 @@
 	name = "Spiked Wavy"
 	icon_state = "wavy_spiked"
 
+/datum/sprite_accessory/hair/cielmmz
+	name = "cielmmz"
+	icon_state = "hair_cielmmz"
+
+/datum/sprite_accessory/hair/ventmmzx
+	name = "ventmmzx"
+	icon_state = "hair_ventmmzx"
+
+/datum/sprite_accessory/hair/futuretrunksdbz
+	name = "futuretrunksdbz"
+	icon_state = "hair_futuretrunksdbz"
+
+/datum/sprite_accessory/hair/wilymm
+	name = "wilymm"
+	icon_state = "hair_wilymm"
+
+/datum/sprite_accessory/hair/sagacdz
+	name = "sagacdz"
+	icon_state = "hair_sagacdz"
+
+/datum/sprite_accessory/hair/seiyacdz
+	name = "seiyacdz"
+	icon_state = "hair_seiyacdz"
+
+/datum/sprite_accessory/hair/shuncdz
+	name = "shuncdz"
+	icon_state = "hair_shuncdz"
+
+/datum/sprite_accessory/hair/hyogacdz
+	name = "hyogacdz"
+	icon_state = "hair_hyogacdz"
+
+/datum/sprite_accessory/hair/pridefull1
+	name = "pridefull1"
+	icon_state = "pridefull1"
+
+/datum/sprite_accessory/hair/librarygeburah
+	name = "librarygeburah"
+	icon_state = "hair_librarygeburah"
+
 /////////////////////////////
 // Facial Hair Definitions //
 /////////////////////////////
