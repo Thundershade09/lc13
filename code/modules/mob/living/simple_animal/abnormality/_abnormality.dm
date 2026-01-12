@@ -31,6 +31,10 @@
 	var/start_qliphoth = 0
 	/// Can it breach? If TRUE - ZeroQliphoth() calls BreachEffect()
 	var/can_breach = FALSE
+	/// The % chance for it to drop Q on each result.
+	var/good_droprate = 0
+	var/neutral_droprate = 0
+	var/bad_droprate = 0
 	/// List of humans that witnessed the abnormality breaching
 	var/list/breach_affected = list()
 	/// Copy-pasted from megafauna.dm: This allows player controlled mobs to use abilities
@@ -137,7 +141,7 @@
 
 	/// Bubbles and their speech
 	// Generic bubbles by agent level.
-	var/list/generic_bubbles = list(
+	var/list/generic_bubbles = alist(
 		1 = list("%PERSON looks nervously at %ABNO...", "%PERSON tries to stay focused."),
 		2 = list("%PERSON focuses on the task at hand.", "%PERSON follows the directions as trained."),
 		3 = list("%PERSON keeps an eye on %ABNO.", "%PERSON considers what they'll eat next."),
@@ -432,16 +436,22 @@ The variable's key needs to be non-numerical.*/
 // Additional effects on good work result, if any
 /mob/living/simple_animal/hostile/abnormality/proc/SuccessEffect(mob/living/carbon/human/user, work_type, pe, work_time, canceled)
 	WorkCompleteEffect("good")
+	if(prob(good_droprate))
+		datum_reference.qliphoth_change(-1)
 	return
 
 // Additional effects on neutral work result, if any
 /mob/living/simple_animal/hostile/abnormality/proc/NeutralEffect(mob/living/carbon/human/user, work_type, pe, work_time, canceled)
 	WorkCompleteEffect("normal")
+	if(prob(neutral_droprate))
+		datum_reference.qliphoth_change(-1)
 	return
 
 // Additional effects on work failure
 /mob/living/simple_animal/hostile/abnormality/proc/FailureEffect(mob/living/carbon/human/user, work_type, pe, work_time, canceled)
 	WorkCompleteEffect("bad")
+	if(prob(bad_droprate))
+		datum_reference.qliphoth_change(-1)
 	return
 
 // Visual effect for work completion
